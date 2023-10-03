@@ -32,9 +32,10 @@ public:
 
     void getPos() {
 
-        cout << "Input Latitude (degrees, minutes, N/S: " endl;
+        cout << "Input Latitude (degrees, minutes, N/S: " << endl;
         cin >> degreesLat >> minutesLat >> directionLat;
-
+        cout << "Enter longitude (degrees, minutes, E/W): " << endl;
+        cin >> degreesLong >> minutesLong >> directionLong;
 
 //We validate the latitude degrees, minutes and direction here
 
@@ -52,7 +53,7 @@ public:
             cout << "Invalid Latitude Direction. Must be N or S" << endl;
             return;
         }
-
+       
 
 //We validate the longitude degrees, minutes and direction here
 
@@ -87,7 +88,7 @@ private:
     int yachtNumber;
     Location location;
 
-    static int yachtCount //This is a static variable to keep track of the number of yachts
+    static int yachtCount; //This is a static variable to keep track of the number of yachts
 
 public:
 //constructor to assign a unique number to a yacht and increment the count
