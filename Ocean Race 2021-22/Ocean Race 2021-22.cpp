@@ -115,12 +115,17 @@ public:
 int yacht::yachtCount = 0; // Initialize static member variable
 
 int main() {
-    yacht yachts[3]; // Create an array of Yacht objects
 
+    cout << "******************Ocean Race 2021 - 22***************\n";
+
+    yacht yachts[3]; // Create an array of Yacht objects
     for (int i = 0; i < 3; i++) {
         std::cout << "Enter location for Yacht " << i + 1 << ":\n";
         yachts[i].getPos();
+    cout << "******************************************************\n";
     }
+
+    cout << "***************Welcome to Ocean Race 2021 - 22*************\n"; 
 
     std::cout << "Yacht Locations:\n";
     for (int i = 0; i < 3; i++) {
