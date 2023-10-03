@@ -25,7 +25,7 @@ private:
 public:
 
 //This is where the constructor sits to initialize the location object
-    location() : degreesLat(0), minutesLat(0), directionLat('N'), degreesLong(0), minutesLong(0), directionLong('E') {}
+    Location() : degreesLat(0), minutesLat(0), directionLat('N'), degreesLong(0), minutesLong(0), directionLong('E') {}
 
 
 //This is the function to get the yachts position from the user
@@ -62,7 +62,7 @@ public:
             return;
         }
 
-        if (minutesLong < 0 || minutesLlong >= 60) {
+        if (minutesLong < 0 || minutesLong >= 60) {
             cout << "Invalid Longitude Minutes. Must be between 0 and 60." << endl;
             return;
         }
@@ -105,17 +105,28 @@ public:
 
 //Function to display the yachts number and location
     void display() {
-        cout << "Yacht" << yachtNumber << ": ";
+        cout << "Yacht " << yachtNumber << ": ";
         location.display();
         cout << endl;
     }
 
 };
 
+int yacht::yachtCount = 0; // Initialize static member variable
 
+int main() {
+    yacht yachts[3]; // Create an array of Yacht objects
 
-int main()
-{
-    
+    for (int i = 0; i < 3; i++) {
+        std::cout << "Enter location for Yacht " << i + 1 << ":\n";
+        yachts[i].getPos();
+    }
+
+    std::cout << "Yacht Locations:\n";
+    for (int i = 0; i < 3; i++) {
+        yachts[i].display();
+        std::cout << std::endl;
+    }
+
+    return 0;
 }
-
