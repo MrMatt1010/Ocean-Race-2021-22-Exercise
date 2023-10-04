@@ -76,8 +76,8 @@ public:
 //Function to display the location in the format required;
 
     void display() {
-        std::cout << degreesLat << "\xF8" << minutesLat << "' " << directionLat << " ";
-        std::cout << degreesLong << "\xF8" << minutesLong << "' " << directionLong;
+       cout << degreesLat << "\xF8" << minutesLat << "' " << directionLat << " Latitude ";
+       cout << degreesLong << "\xF8" << minutesLong << "' " << directionLong << " Longitude ";
     }
 
 };
@@ -105,7 +105,7 @@ public:
 
 //Function to display the yachts number and location
     void display() {
-        cout << "Yacht " << yachtNumber << ": ";
+        cout << "The yacht number is: " << yachtNumber << " and its position is: ";;
         location.display();
         cout << endl;
     }
@@ -116,21 +116,27 @@ int yacht::yachtCount = 0; // Initialize static member variable
 
 int main() {
 
+    cout << endl;
+
     cout << "******************Ocean Race 2021 - 22***************\n";
 
     yacht yachts[3]; // Create an array of Yacht objects
     for (int i = 0; i < 3; i++) {
-        std::cout << "Enter location for Yacht " << i + 1 << ":\n";
+    cout << "Enter location for Yacht " << i + 1 << ":\n";
         yachts[i].getPos();
     cout << "******************************************************\n";
     }
 
+    cout << endl;
+    cout << endl;
     cout << "***************Welcome to Ocean Race 2021 - 22*************\n"; 
 
-    std::cout << "Yacht Locations:\n";
+    
+   
     for (int i = 0; i < 3; i++) {
         yachts[i].display();
-        std::cout << std::endl;
+        
+    cout << std::endl;
     }
 
     return 0;
